@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Do Not Click</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f8f8f8;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 25px;
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+        .john-pics img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DO NOT CLICK ME IF YOU'RE JOHN</h1>
+    <button onclick="showJohn()">DO NOT CLICK ME</button>
+
+    <div class="john-pics" id="johnPics"></div>
+
+    <script>
+        function showJohn() {
+            const pics = [
+                "file:///C:/Users/alexa/Downloads/E9A9C287-6E11-4EF4-83F4-863BE9B800C3.jpg",
+                "file:///C:/Users/alexa/Downloads/B5663E96-3CFF-4784-BB8B-1179402EAC51.jpg",
+                "file:///C:/Users/alexa/Downloads/5DA45557-E7E1-49F8-B079-CF8BB70654ED.jpg"
+            ];
+            const container = document.getElementById("johnPics");
+            container.innerHTML = ""; 
+            pics.forEach(pic => {
+                const img = document.createElement("img");
+                img.src = pic;
+                container.appendChild(img);
+            });
+        }
+    </script>
+
+</body>
+</html>
